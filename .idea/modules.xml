@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Superuser/Superuser.iml" filepath="$PROJECT_DIR$/Superuser/Superuser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Widgets/Widgets/Widgets.iml" filepath="$PROJECT_DIR$/Widgets/Widgets/Widgets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Widgets/WidgetsSample/WidgetsSample.iml" filepath="$PROJECT_DIR$/Widgets/WidgetsSample/WidgetsSample.iml" />
+    </modules>
+  </component>
+</project>
+

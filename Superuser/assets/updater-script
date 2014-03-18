@@ -1,0 +1,55 @@
+ui_print("***************************");
+ui_print("Rooting with Superuser by Koush & Busybox 1.20.2");
+ui_print("***************************");
+show_progress(1.000000, 0);
+
+ui_print("Installing temporary busybox");
+package_extract_file("system/xbin/busybox", "/tmp/busybox");
+set_perm(0, 0, 0777, "/tmp/busybox");
+set_progress(0.200000);
+
+ui_print("Mounting system...");
+run_program("/tmp/busybox", "mount", "/system");
+set_progress(0.300000);
+
+ui_print("Removing old superuser");
+delete("/system/bin/su");
+delete("/system/xbin/su");
+delete("/system/app/superuser.apk");
+delete("/system/app/superUser.apk");
+delete("/system/app/Superuser.apk");
+delete("/system/app/SuperUser.apk");
+set_progress(0.400000);
+
+ui_print("Installing Superuser & Busybox...");
+package_extract_dir("system", "/system");
+set_progress(0.600000);
+
+ui_print("Setting Permission...");
+set_perm(0, 0, 06755, "/system/xbin/su");
+set_perm(0, 0, 0644, "/system/app/Superuser.apk");
+set_perm(0, 0, 04755, "/system/xbin/busybox");
+set_progress(0.700000);
+
+ui_print("Installing Busybox...");
+run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
+set_progress(0.900000);
+
+ui_print("Symlinking...");
+symlink("/system/xbin/su", "/system/bin/su");
+
+ui_print("Unmounting system...");
+run_program("/tmp/busybox", "umount", "/system");
+
+ui_print("Deleting temporary busybox");
+delete("/tmp/busybox");
+set_progress(1.000000);
+show_progress(1.000000, 0);
+
+ui_print("Root complete!");
+ui_print("Congrats");
+ui_print("Superuser by Koush & Busybox 1.20.2");
+ui_print("Your phone has been");
+ui_print("Rooted");
+ui_print("by Veaceslav Gaidarji");
+ui_print("- Fruitware");
